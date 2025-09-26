@@ -1,15 +1,14 @@
 import { Router } from "express";
+import { getUser, postUser } from "../controller/user.js";
 const router = Router();
 
 // sample user routes
-router.get ("/user",(req,res) =>{
-    res.json({ message:'user added'})
-    // console.log("creating them all");
-} )
+router.get ("/user", getUser )
+router.post ('/post', postUser)
 
-router.post('/post', (req,res)=>{
-    console.log('the products has been read');
-})
+// router.post('/post', (req,res)=>{
+//     // console.log('the products has been read');
+// })
 
 router.patch('/update', (req,res)=>{
       res.json({ message: "Welcome to the API" });
